@@ -1,6 +1,6 @@
 ---
 title: "Mini-Project 2"
-author: "Your Name Here"
+author: "Khulood and Zoya"
 date: "2019-03-24"
 output: 
   html_document:
