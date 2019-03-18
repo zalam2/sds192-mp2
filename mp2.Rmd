@@ -18,4 +18,9 @@ load("committees.rda")
 load("contributions.rda")
 ```
 
-Hello
+```{r}
+first_jim <- candidates %>%
+  filter(cand_id == "H8WA07132")
+first_jim
+```
+
