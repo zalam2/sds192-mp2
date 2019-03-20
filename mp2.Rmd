@@ -59,7 +59,8 @@ first_committee <- committees %>%
 first_candidate <- candidates %>% 
   select(cand_id, cand_name, cand_party_affiliation, cand_state, cand_office) %>%
   inner_join(first_committee, by = "cand_id")
-first_candidate
+first_candidate %>%
+  filter(cmte_party_affiliation== "DEM")
 ```
 
 
