@@ -12,6 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ## R Markdown
 
 ```{r}
+install.packages("naniar")
+```
+
+```{r}
 library(tidyverse)
 library(naniar)
 load("house_elections.rda")
@@ -42,12 +46,9 @@ committees %>%
 ```
 
 ```{r}
-first_table <- committees %>%
-  group_by(cand_id)
-  summarize(N= n_distinct(cmte_dsgn)) %>%
-  arrange(desc(N))
-first_table
+committees
 ```
+
 
 ```{r}
 first_committee <- committees %>%
@@ -58,11 +59,8 @@ first_committee <- committees %>%
 first_candidate <- candidates %>% 
   select(cand_id, cand_name, cand_party_affiliation, cand_state, cand_office) %>%
   inner_join(first_committee, by = "cand_id")
-
+first_candidate
 ```
 
-```{r}
-first_candidate %>%
-  mutate(org_type = replace_with_na(org_type, ""))
-```
+
 
